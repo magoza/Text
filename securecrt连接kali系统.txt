@@ -1,0 +1,16 @@
+1.在kali的终端输入/etc/init.d/ssh status回车，用来查看kali中SSH服务状态；kali Linux 默认情况下SSH服务是inactive（未激活）状态
+
+2.修改kali关于SSH服务默认配置并重启SSH服务，打开sshd_config文件：leafpad /etc/ssh/sshd_config 或者vi /etc/ssh/sshd_config
+
+b)将PasswordAuthentication yes 该行前面的#去掉
+
+c)将#PermitRootLogin without-password该行“without-password”修改为YES
+
+d)启动SSH服务：servicessh start或者/etc/init.d/sshstart
+e)验证SSH服务状态：/etc/init.d/ssh status
+
+
+f)设置SSH开机自启：update-rc.d ssh enable
+kali的SSH服务已经开启
+
+3.通过secureCRT来检测是否可以通过SSH远程kali
